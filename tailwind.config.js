@@ -16,6 +16,9 @@ module.exports = {
         'span-11': 'span 11 / span 11',
       }
     },
+    backgroundImage: {
+      'hero': "url('../public/shahadat-rahman-BfrQnKBulYQ-unsplash.jpg')",
+    }
   },
   plugins: [],
 }
