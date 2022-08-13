@@ -13,8 +13,8 @@ import pythonIcon from '../public/python_icon.svg'
 const Home: NextPage = () => {
   return (
       <div className={'h-full w-full'}>
-          <div className={'fixed h-4/5 w-full relative bg-hero bg-cover bg-[#0c41f0]/75 bg-blend-multiply flex flex-row items-center justify-center'}>
-              <h1 className={'font-nunito z-10 text-white text-6xl w-3/5 text-center font-bold animate__animated animate__fadeInUp'}>{"Hi! I'm Joshua Oguh. <br/> I'm a web developer based in Pittsbugh."}</h1>
+          <div className={'fixed h-[32rem] w-full relative bg-hero bg-cover bg-[#0c41f0]/75 bg-blend-multiply flex flex-row items-center justify-center'}>
+              <h1 className={'font-roboto z-10 text-white text-6xl w-3/5 text-center font-bold animate__animated animate__fadeInUp'}>Hi! I'm Joshua Oguh. <br /> I'm a web developer based in Pittsburgh.</h1>
           </div>
           <div>
               <div className={'text-3xl text-center pt-4'}>Skills</div>
