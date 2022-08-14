@@ -9,12 +9,22 @@ import typescriptIcon from '../public/Typescript_logo_2020.svg'
 import expressIcon from '../public/expressjs_logo_icon_169185.svg'
 import nextjsIcon from '../public/Nextjs-logo.svg'
 import pythonIcon from '../public/python_icon.svg'
+import {useEffect, useState} from "react";
 
 const Home: NextPage = () => {
-  return (
-      <div className={'h-full w-full'}>
+    const [opacity, setOpacity] = useState(100)
+    useEffect(() => {
+        const onScroll = () => {
+            setOpacity((opacity - (window.scrollY / 5)) / 100)
+        };
+        window.removeEventListener('scroll', onScroll);
+        window.addEventListener('scroll', onScroll, { passive: true });
+        return () => window.removeEventListener('scroll', onScroll);
+    }, []);
+    return (
+      <div className={'h-full w-full overflow-auto'}>
           <div className={'fixed h-[32rem] w-full relative bg-hero bg-cover bg-[#0c41f0]/75 bg-blend-multiply flex flex-row items-center justify-center'}>
-              <h1 className={'font-roboto z-10 text-white text-6xl w-3/5 text-center font-bold animate__animated animate__fadeInUp'}>Hi! I'm Joshua Oguh. <br /> I'm a web developer based in Pittsburgh.</h1>
+              <h1 className={`font-roboto opacity-75 z-10 text-6xl w-3/5 text-center font-bold animate__animated animate__fadeInUp`} style={{color: `rgba(255, 255, 255, ${opacity}`}}>Hi! I'm Joshua Oguh. <br /> I'm a web developer based in Pittsburgh.</h1>
           </div>
           <div>
               <div className={'text-3xl text-center pt-4'}>Skills</div>
@@ -71,7 +81,7 @@ const Home: NextPage = () => {
               </div>
           </div>
       </div>
-  )
+    )
 }
 
 export default Home

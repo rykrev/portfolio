@@ -1,10 +1,32 @@
 import Link from "next/link";
 import {useEffect, useState} from "react";
 
+//TOOD change to ternary operator
 const HeaderComponent = () => {
-    const [workBold, setWorkBold] = useState('');
+    const [workBold, setWorkBold] = useState('font-bold');
     const [aboutBold, setAboutBold] = useState('');
     const [contactBold, setContactBold] = useState('');
+    const [scrolled, setScrolled] = useState(false);
+    const [navbarColor, setNavbarColor] = useState('bg-[#0c41f0]');
+    const [textColor, setTextColor] = useState('text-white');
+
+    useEffect(() => {
+        const onScroll = () => {
+            if (window.scrollY < 2) {
+                setScrolled(false);
+                setNavbarColor('bg-[#0c41f0]');
+                setTextColor('text-white')
+            }
+            else if (window.scrollY > 2) {
+                setScrolled(true);
+                setNavbarColor('bg-white shadow-lg');
+                setTextColor('text-[#0c41f0]')
+            }
+        };
+        window.removeEventListener('scroll', onScroll);
+        window.addEventListener('scroll', onScroll, { passive: true });
+        return () => window.removeEventListener('scroll', onScroll);
+    }, []);
 
     useEffect(() => {
         const url = window.location.href.split('/')
@@ -24,13 +46,8 @@ const HeaderComponent = () => {
         }
     })
 
-    const handleScroll = event => {
-        console.log('scrollTop: ', event.currentTarget.scrollTop);
-        console.log('offsetHeight: ', event.currentTarget.offsetHeight);
-    };
-
     return (
-        <div className={'flex flex-row items-center justify-between p-4 text-2xl sticky top-0 z-20 font-roboto  bg-[#0c41f0] text-white'}>
+        <div className={`transition-all flex flex-row items-center justify-between p-4 text-2xl sticky top-0 z-20 font-roboto ${navbarColor} ${textColor}`}>
             <div className={'w-1/3 justify-center flex flex-row gap-4'}>
                 <Link href={'/'}>
                     <h2 className={`cursor-pointer ${workBold}`}>work</h2>
