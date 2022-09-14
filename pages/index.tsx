@@ -4,8 +4,8 @@ import Image from 'next/image'
 import serverImg from '../public/server-svgrepo-com.svg'
 import developImg from '../public/api-svgrepo-com.svg'
 import designImg from '../public/web-design-svgrepo-com.svg'
-import screenshot1 from '../public/Screen Shot 2022-09-01 at 11.58.09 PM.png'
-import screenshot2 from '../public/Screen Shot 2022-09-11 at 10.32.04 PM.png'
+import screenshot1 from '../public/zcancelingscreenshot.png'
+import screenshot2 from '../public/polarascreenshotimg.png'
 
 import {useEffect, useRef, useState} from "react";
 import Link from "next/link";
