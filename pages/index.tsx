@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 import {useEffect, useState} from "react";
 import {MdDesignServices, MdOutlineCode, MdArrowForwardIos,
     MdRocketLaunch, MdAnalytics, MdLightbulb} from "react-icons/md";
@@ -29,9 +29,6 @@ const Home = () => {
     return (
         <div className="font-mont">
             <Head>
-                <style>
-                    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
-                </style>
                 <title>Joshua Oguh</title>
             </Head>
             <Header/>

@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import 'animate.css';
-import Image from 'next/image'
+import Image from "next/legacy/image"
 import serverImg from '../public/server-svgrepo-com.svg'
 import developImg from '../public/api-svgrepo-com.svg'
 import designImg from '../public/web-design-svgrepo-com.svg'

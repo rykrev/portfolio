@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     fontFamily: {
       'nunito': ['Nunito Sans'],
-      'mont': ['Montserrat', 'sans-serif']
+      'mont': ['Montserrat', 'var(--font-mont)', 'var(--font-sans)'],
     },
     extend: {
       gridTemplateRows: {

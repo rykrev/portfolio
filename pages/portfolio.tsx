@@ -1,7 +1,7 @@
 import Header from "../components/header";
 import Footer from "../components/footer";
 import {IoArrowForwardSharp} from "react-icons/io5";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { AnimationOnScroll } from "react-animation-on-scroll";
 import Head from "next/head";
 
@@ -9,9 +9,6 @@ const Portfolio = () => {
     return (
         <div>
             <Head>
-                <style>
-                    @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
-                </style>
                 <title>Joshua Oguh</title>
             </Head>
             <Header />
