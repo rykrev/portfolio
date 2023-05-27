@@ -77,7 +77,7 @@ const Home = () => {
                                 <AnimationOnScroll animateOnce animateIn={"animate__fadeInUp"} className="animate__animated xl:col-span-1 row-span-1 border border-gray-800 rounded p-8">
                                     <h2 className="text-4xl text-black font-semibold">Analytics</h2>
                                     <p className="text-black mt-4 text-xl">I implement comprehensive
-                                        analytics solutions to track and analyze your website's performance.
+                                        analytics solutions to track and analyze your website&apos;s performance.
                                         I leverage data-driven insights to optimize your online presence
                                         and drive growth.
                                     </p>
@@ -111,7 +111,7 @@ const Home = () => {
                             </AnimationOnScroll>
                             <AnimationOnScroll animateOnce animateIn={"animate__fadeInUp"} className="animate__animated flex flex-row items-center xl:mt-8">
                                 <IoExtensionPuzzleSharp className={'text-xl text-yellow-300'} />
-                                <p className="text-black text-lg md:text-xl ml-4">Your website's design is outdated</p>
+                                <p className="text-black text-lg md:text-xl ml-4">Your website&apos;s design is outdated</p>
                             </AnimationOnScroll>
                             <AnimationOnScroll animateOnce animateIn={"animate__fadeInUp"} className="animate__animated flex flex-row items-center xl:mt-8">
                                 <IoExtensionPuzzleSharp className={'text-xl text-blue-300'} />
@@ -307,7 +307,7 @@ const Home = () => {
                     <div className="grid md:grid-cols-3 grid-rows-3 md:grid-rows-1 mt-16 px-8">
                         <AnimationOnScroll animateOnce animateIn={"animate__fadeInUp"} className="animate__animated row-span-2 md:col-span-2">
                             <h3 className="text-6xl font-semibold">Interested in working together?</h3>
-                            <p className="text-xl mt-8">I'd love to hear from you and learn more about your business. <br/> Send me a message to discuss how I can help you achieve your web development goals and take your online presence to the next level.</p>
+                            <p className="text-xl mt-8">I&apos;d love to hear from you and learn more about your business. <br/> Send me a message to discuss how I can help you achieve your web development goals and take your online presence to the next level.</p>
                         </AnimationOnScroll>
                         <div className="row-span-1 md:col-span-1 flex flex-row justify-center items-center">
                             <AnimationOnScroll animateOnce animateIn={"animate__fadeInUp"} className={"animate__animated"}>

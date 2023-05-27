@@ -1,6 +1,7 @@
 import {IoArrowForwardSharp} from "react-icons/io5";
 import Footer from "../components/footer";
 import Header from "../components/header";
+import Link from "next/link";
 
 const Contact = () => {
     return (
@@ -10,10 +11,10 @@ const Contact = () => {
                 <div className="md:col-span-6">
                     <div className="h-full w-full flex flex-col justify-center">
                         <h1 className="md:text-6xl font-bold text-4xl">Get in contact</h1>
-                        <p className="text-2xl mt-4">I'm currently looking for new opportunities, my inbox is always open.
-                            Whether you have a question or just want to say hi, I'll try my best to get back to you!</p>
-                        <a href={'mailto:joshuaoguh12@gmail.com'} className="md:mt-8 mt-4 md:text-4xl text-2xl font-light
-                    underline underline-offset-8 hover:text-gray-600 transition-all w-auto md:font-normal font-medium">joshuaoguh12@gmail.com</a>
+                        <p className="text-2xl mt-4">I&apos;m currently looking for new opportunities, my inbox is always open.
+                            Whether you have a question or just want to say hi, I&apos;ll try my best to get back to you!</p>
+                        <Link href={'mailto:joshuaoguh12@gmail.com'} className="md:mt-8 mt-4 md:text-4xl text-2xl font-light
+                    underline underline-offset-8 hover:text-gray-600 transition-all w-auto md:font-normal font-medium">joshuaoguh12@gmail.com</Link>
                     </div>
                 </div>
                 <div className="md:col-span-5 md:px-8 px-2 mt-16 md:mt-0">

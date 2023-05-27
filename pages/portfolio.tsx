@@ -13,8 +13,8 @@ const Portfolio = () => {
                     <h1 className="text-6xl text-black font-semibold text-center pt-16">Portfolio</h1>
                 </AnimationOnScroll>
                 <AnimationOnScroll animateOnce animateIn={"animate__fadeInUp"} className={"animate__animated"}>
-                    <p className="text-black mt-4 text-2xl text-center px-12">Welcome to my portfolio. Here, you'll find websites I've created with care and attention to detail,
-                        each one crafted to meet the unique goals and aspirations of the businesses I've had the pleasure
+                    <p className="text-black mt-4 text-2xl text-center px-12">Welcome to my portfolio. Here, you&apos;ll find websites I&apos;ve created with care and attention to detail,
+                        each one crafted to meet the unique goals and aspirations of the businesses I&apos;ve had the pleasure
                         to work with. Take a moment to browse through and get a feel for the quality of work and attention
                         to detail I bring to every project.</p>
                 </AnimationOnScroll>
