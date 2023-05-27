@@ -10,7 +10,7 @@ const Portfolio = () => {
         <div>
             <Head>
                 <style>
-                    @import url(&apos;https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap&apos;);
+                    @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
                 </style>
                 <title>Joshua Oguh</title>
             </Head>

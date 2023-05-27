@@ -21,7 +21,6 @@ const Home = () => {
         const onScroll = () => {
             setOpacity((opacity - (window.scrollY / 5)) / 100)
         };
-        window.removeEventListener('scroll', onScroll);
         window.addEventListener('scroll', onScroll, { passive: true });
         return () => window.removeEventListener('scroll', onScroll);
     }, []);
@@ -31,14 +30,14 @@ const Home = () => {
         <div className="font-mont">
             <Head>
                 <style>
-                    @import url(&apos;https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap&apos;);
+                    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
                 </style>
                 <title>Joshua Oguh</title>
             </Head>
-            <Header />
+            <Header/>
             <main>
                 <section className={'fixed h-screen flex gap-16 flex-col w-full relative bg-hero bg-cover bg-[#0c41f0]/75 bg-blend-multiply flex flex-row items-center justify-center'}>
-                    <h1 className={`z-10 xl:text-6xl text-5xl font-mont w-4/5 xl:w-3/5 text-center font-bold animate__animated animate__backInDown`} style={{color: `rgba(255, 255, 255, ${opacity}`}}>Hi! I&apos;m Joshua Oguh. <br /> I provide innovative web solutions to grow your business.</h1>
+                    <h1 className={`z-10 xl:text-6xl text-5xl font-mont w-4/5 xl:w-3/5 text-center font-bold animate__animated animate__backInDown`} style={{color: `rgba(255, 255, 255, ${opacity})`}}>Hi! I&apos;m Joshua Oguh. <br /> I provide innovative web solutions to grow your business.</h1>
                     <h2 className={'text-white font-mont text-2xl z-10 animate__animated animate__backInDown'} style={{color: `rgba(255, 255, 255, ${opacity}`}}>Scroll to see what I offer.</h2>
                 </section>
                 <section className="bg-white  px-12">
@@ -97,7 +96,9 @@ const Home = () => {
                     </div>
                 </section>
                 <section className="bg-white px-12">
-                    <div className="border-t-2 border-gray-300 mt-24" />
+                    <AnimationOnScroll animateOnce animateIn={"animate__fadeInUp"} className="animate__animated">
+                        <div className="border-t-2 border-gray-300 mt-24" />
+                    </AnimationOnScroll>
                     <div className="pt-8 md:px-8">
                         <AnimationOnScroll animateOnce className={"animate__animated"} animateIn={"animate__fadeInUp"}>
                             <h3 className="md:text-6xl text-3xl md:py-4 font-bold text-black text-center md:text-left">The problem</h3>
@@ -180,7 +181,9 @@ const Home = () => {
                     </div>
                 </section>
                 <section className="bg-white px-12">
-                    <div className="border-t-2 border-gray-300 mt-12" />
+                    <AnimationOnScroll animateOnce animateIn={"animate__fadeInUp"} className="animate__animated">
+                        <div className="border-t-2 border-gray-300 mt-12" />
+                    </AnimationOnScroll>
                     <div className="py-8 md:px-8">
                         <AnimationOnScroll animateOnce animateIn={"animate__fadeInUp"} className="animate__animated">
                             <h3 className="md:text-6xl text-5xl md:py-4 text-black font-semibold">My recent works</h3>
@@ -234,7 +237,9 @@ const Home = () => {
                     </div>
                 </section>
                 <section className="bg-white  px-12">
-                    <div className="border-t-2 border-gray-300 mt-24" />
+                    <AnimationOnScroll animateOnce animateIn={"animate__fadeInUp"} className="animate__animated">
+                        <div className="border-t-2 border-gray-300 mt-24" />
+                    </AnimationOnScroll>
                     <div className="py-8 px-4 text-center md:px-8">
                         <AnimationOnScroll animateOnce animateIn={"animate__fadeInUp"} className="animate__animated">
                             <h3 className="text-6xl text-black font-semibold py-4">My Process</h3>
@@ -310,7 +315,9 @@ const Home = () => {
                     </div>
                 </section>
                 <section className="bg-white px-12 mb-24 mt-8">
-                    <div className="border-t-2 border-gray-300 mt-18" />
+                    <AnimationOnScroll animateOnce animateIn={"animate__fadeInUp"} className="animate__animated">
+                        <div className="border-t-2 border-gray-300 mt-18" />
+                    </AnimationOnScroll>
                     <div className="grid md:grid-cols-3 grid-rows-3 md:grid-rows-1 mt-16 px-8">
                         <AnimationOnScroll animateOnce animateIn={"animate__fadeInUp"} className="animate__animated row-span-2 md:col-span-2">
                             <h3 className="text-6xl font-semibold">Interested in working together?</h3>
@@ -328,7 +335,7 @@ const Home = () => {
                     </div>
                 </section>
             </main>
-            <Footer />
+            <Footer/>
         </div>
 
 
