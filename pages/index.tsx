@@ -12,6 +12,7 @@ import Footer from "../components/footer";
 import { AnimationOnScroll } from "react-animation-on-scroll";
 
 import 'animate.css'
+import Head from "next/head";
 
 const Home = () => {
     const [opacity, setOpacity] = useState(100);
@@ -28,6 +29,12 @@ const Home = () => {
 
     return (
         <div className="font-mont">
+            <Head>
+                <style>
+                    @import url(&apos;https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap&apos;);
+                </style>
+                <title>Joshua Oguh</title>
+            </Head>
             <Header />
             <main>
                 <section className={'fixed h-screen flex gap-16 flex-col w-full relative bg-hero bg-cover bg-[#0c41f0]/75 bg-blend-multiply flex flex-row items-center justify-center'}>

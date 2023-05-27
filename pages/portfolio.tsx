@@ -3,10 +3,17 @@ import Footer from "../components/footer";
 import {IoArrowForwardSharp} from "react-icons/io5";
 import Image from "next/image";
 import { AnimationOnScroll } from "react-animation-on-scroll";
+import Head from "next/head";
 
 const Portfolio = () => {
     return (
         <div>
+            <Head>
+                <style>
+                    @import url(&apos;https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap&apos;);
+                </style>
+                <title>Joshua Oguh</title>
+            </Head>
             <Header />
             <main className="md:px-12">
                 <AnimationOnScroll animateOnce animateIn={"animate__fadeInUp"} className={"animate__animated"}>

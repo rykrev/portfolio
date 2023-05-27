@@ -2,10 +2,17 @@ import {IoArrowForwardSharp} from "react-icons/io5";
 import Footer from "../components/footer";
 import Header from "../components/header";
 import Link from "next/link";
+import Head from "next/head";
 
 const Contact = () => {
     return (
         <div>
+            <Head>
+                <style>
+                    @import url(&apos;https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap&apos;);
+                </style>
+                <title>Joshua Oguh</title>
+            </Head>
             <Header />
             <div className="md:h-screen md:w-screen md:grid md:grid-cols-11 flex flex-col md:py-8 py-12 md:px-16 px-4 md:-mt-16">
                 <div className="md:col-span-6">
