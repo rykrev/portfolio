@@ -7,7 +7,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <div>
           <Head>
               <style>
-                  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+                  @import url(&apos;https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap&apos;);
               </style>
               <title>Joshua Oguh</title>
           </Head>
