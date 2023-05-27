@@ -1,19 +1,14 @@
 import Image from "next/image";
 import {useEffect, useState} from "react";
-import WgithubIcon from "../public/whiteGithub.svg";
-import WatIcon from "../public/whiteAt.svg";
-import BgithubIcon from "../public/blueGithub.svg";
-import BatIcon from "../public/blueAt.svg";
 import {MdDesignServices, MdOutlineCode, MdArrowForwardIos,
     MdRocketLaunch, MdAnalytics, MdLightbulb} from "react-icons/md";
 import {IoExtensionPuzzleSharp, IoArrowForwardSharp} from "react-icons/io5";
-import {HiPaintBrush, HiOutlineLightBulb} from "react-icons/hi2";
+import {HiPaintBrush} from "react-icons/hi2";
 import {BsFillGearFill, BsFillClipboardCheckFill} from "react-icons/bs";
 import {SiMaterialdesignicons} from "react-icons/si";
 import {FaLaptopCode, FaCompass} from "react-icons/fa";
 import Header from "../components/header";
 import Footer from "../components/footer";
-import Head from "next/head";
 import { AnimationOnScroll } from "react-animation-on-scroll";
 
 import 'animate.css'
@@ -33,11 +28,6 @@ const Home = () => {
 
     return (
         <div className="font-mont">
-            <Head>
-                <style>
-                    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
-                </style>
-            </Head>
             <Header />
             <main>
                 <section className={'fixed h-screen flex gap-16 flex-col w-full relative bg-hero bg-cover bg-[#0c41f0]/75 bg-blend-multiply flex flex-row items-center justify-center'}>
@@ -190,43 +180,47 @@ const Home = () => {
                         </AnimationOnScroll>
                     </div>
                     <div className="flex flex-col justify-center md:px-8">
-                        <AnimationOnScroll animateOnce animateIn={"animate__fadeInUp"} className="animate__animated grid md:grid-cols-11 md:grid-rows-1 grid-rows-11 border border-gray-300
+                        <AnimationOnScroll animateOnce animateIn={"animate__fadeInUp"} className="animate__animated">
+                            <div className="grid md:grid-cols-11 md:grid-rows-1 grid-rows-11 border border-gray-300
                                                    h-[32rem] cursor-pointer group transition-all hover:scale-95">
-                            <div className="md:col-span-5 row-span-8 px-8 flex flex-col justify-center order-last md:order-none">
-                                <h4 className="md:text-5xl text-4xl text-bold group-hover:text-blue-600 transition-all">OrbitXLM</h4>
-                                <p className="text-gray-500 mt-4 md:text-xl">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    Maecenas eros felis, pellentesque eget tincidunt quis, iaculis at elit.</p>
-                                <div className="flex flex-row mt-8">
-                                    <div className="flex flex-row items-center">
-                                        <span className="text-2xl font-medium underline">View project</span>
-                                        <IoArrowForwardSharp className={'text-2xl ml-2 group-hover:ml-8 transition-all'} />
+                                <div className="md:col-span-5 row-span-8 px-8 flex flex-col justify-center order-last md:order-none">
+                                    <h4 className="md:text-5xl text-4xl text-bold group-hover:text-blue-600 transition-all">OrbitXLM</h4>
+                                    <p className="text-gray-500 mt-4 md:text-xl">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                        Maecenas eros felis, pellentesque eget tincidunt quis, iaculis at elit.</p>
+                                    <div className="flex flex-row mt-8">
+                                        <div className="flex flex-row items-center">
+                                            <span className="text-2xl font-medium underline">View project</span>
+                                            <IoArrowForwardSharp className={'text-2xl ml-2 group-hover:ml-8 transition-all'} />
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div className="md:col-span-6 row-span-3 bg-blue-200 flex flex-row justify-center items-center">
-                                <div className="w-5/6 h-3/4 relative group-hover:scale-110 transition-all">
-                                    <Image src={"/orbitxlm.png"} fill={true} layout={'fill'} objectFit={'contain'}/>
+                                <div className="md:col-span-6 row-span-3 bg-purple-100 flex flex-row justify-center items-center">
+                                    <div className="w-5/6 h-3/4 relative group-hover:scale-110 transition-all">
+                                        <Image src={"/orbitxlm.png"} layout={'fill'} objectFit={'contain'}/>
+                                    </div>
                                 </div>
                             </div>
                         </AnimationOnScroll>
                     </div>
                     <div className="flex flex-col justify-center mt-16 md:px-8">
-                        <AnimationOnScroll animateOnce animateIn={"animate__fadeInUp"} className="animate__animated grid md:grid-cols-11 md:grid-rows-1 grid-rows-11 border border-gray-300
+                        <AnimationOnScroll animateOnce animateIn={"animate__fadeInUp"} className="animate__animated">
+                            <div className="grid md:grid-cols-11 md:grid-rows-1 grid-rows-11 border border-gray-300
                                                    h-[32rem] cursor-pointer group transition-all hover:scale-95">
-                            <div className="md:col-span-5 row-span-8 px-8 flex flex-col justify-center order-last md:order-none">
-                                <h4 className="md:text-5xl text-4xl text-bold group-hover:text-blue-600 transition-all">Tidy Thoughts</h4>
-                                <p className="text-gray-500 md:text-xl mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    Maecenas eros felis, pellentesque eget tincidunt quis, iaculis at elit.</p>
-                                <div className="flex flex-row mt-8">
-                                    <div className="flex flex-row items-center">
-                                        <span className="text-2xl font-medium underline">View project</span>
-                                        <IoArrowForwardSharp className={'text-2xl ml-2 group-hover:ml-8 transition-all'} />
+                                <div className="md:col-span-6 row-span-3 bg-blue-100 flex flex-row justify-center items-center">
+                                    <div className="w-5/6 h-3/4 relative group-hover:scale-110 transition-all">
+                                        <Image src={"/tidythoughts2.png"} layout={'fill'} objectFit={'contain'}/>
                                     </div>
                                 </div>
-                            </div>
-                            <div className="md:col-span-6 row-span-3 bg-green-200 flex flex-row justify-center items-center">
-                                <div className="w-5/6 h-3/4 relative group-hover:scale-110 transition-all">
-                                    <Image src={"/tidythoughts2.png"} fill={true} layout={'fill'} objectFit={'contain'}/>
+                                <div className="md:col-span-5 row-span-8 px-8 flex flex-col justify-center order-last md:order-none">
+                                    <h4 className="md:text-5xl text-4xl text-bold group-hover:text-blue-600 transition-all">Tidy Thoughts</h4>
+                                    <p className="text-gray-500 mt-4 md:text-xl">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                        Maecenas eros felis, pellentesque eget tincidunt quis, iaculis at elit.</p>
+                                    <div className="flex flex-row mt-8">
+                                        <div className="flex flex-row items-center">
+                                            <span className="text-2xl font-medium underline">View project</span>
+                                            <IoArrowForwardSharp className={'text-2xl ml-2 group-hover:ml-8 transition-all'} />
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </AnimationOnScroll>

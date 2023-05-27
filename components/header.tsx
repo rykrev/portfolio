@@ -1,4 +1,3 @@
-import Fade from 'react-reveal/Fade';
 
 const Header = () => {
     return (
