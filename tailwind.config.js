@@ -6,7 +6,8 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      'nunito': ['Nunito Sans']
+      'nunito': ['Nunito Sans'],
+      'mont': ['Montserrat', 'sans-serif']
     },
     extend: {
       gridTemplateRows: {
@@ -18,6 +19,8 @@ module.exports = {
       backgroundImage: {
         'hero': "url('../public/shahadat-rahman-BfrQnKBulYQ-unsplash.jpg')",
       }
+
+
     },
 
   },

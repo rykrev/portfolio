@@ -4,16 +4,21 @@ import WgithubIcon from "../public/whiteGithub.svg";
 import WatIcon from "../public/whiteAt.svg";
 import BgithubIcon from "../public/blueGithub.svg";
 import BatIcon from "../public/blueAt.svg";
-import {MdDesignServices, MdOutlineCode, MdRocketLaunch, MdAnalytics, MdLightbulb} from "react-icons/md";
-import {IoExtensionPuzzleSharp} from "react-icons/io5";
-import {HiPaintBrush} from "react-icons/hi2";
-import {BsFillGearFill} from "react-icons/bs";
+import {MdDesignServices, MdOutlineCode, MdArrowForwardIos,
+    MdRocketLaunch, MdAnalytics, MdLightbulb} from "react-icons/md";
+import {IoExtensionPuzzleSharp, IoArrowForwardSharp} from "react-icons/io5";
+import {HiPaintBrush, HiOutlineLightBulb} from "react-icons/hi2";
+import {BsFillGearFill, BsFillClipboardCheckFill} from "react-icons/bs";
+import {SiMaterialdesignicons} from "react-icons/si";
+import {FaLaptopCode, FaCompass} from "react-icons/fa";
+import Header from "../components/header";
+import Footer from "../components/footer";
+import Head from "next/head";
+import { AnimationOnScroll } from "react-animation-on-scroll";
+
+import 'animate.css'
 
 const Home = () => {
-    const [navbarColor, setNavbarColor] = useState('bg-sky-900 dark:bg-[#194a4a]');
-    const [textColor, setTextColor] = useState('text-white');
-    const [githubImg, setGithubImg] = useState(WgithubIcon);
-    const [atImg, setAtImg] = useState(WatIcon);
     const [opacity, setOpacity] = useState(100);
 
     useEffect(() => {
@@ -26,326 +31,303 @@ const Home = () => {
     }, []);
 
 
-    useEffect(() => {
-        const onScroll = () => {
-            if (window.scrollY < 2) {
-                setNavbarColor('bg-sky-900 dark:bg-[#194a4a]');
-                setTextColor('text-white')
-                setGithubImg(WgithubIcon);
-                setAtImg(WatIcon);
-            }
-            else if (window.scrollY > 2) {
-                setNavbarColor('bg-gray-800 shadow-lg dark:bg-[#1a1a1a]');
-                setTextColor('text-white dark:text-[#2176FF]')
-                setGithubImg(BgithubIcon);
-                setAtImg(BatIcon);
-            }
-        };
-        window.removeEventListener('scroll', onScroll);
-        window.addEventListener('scroll', onScroll, { passive: true });
-        return () => window.removeEventListener('scroll', onScroll);
-    }, []);
-
-    function handleClick(ref: any) {
-        ref.current.scrollIntoView({ behavior: "smooth" });
-    }
-
     return (
-        <div>
-            <div className={`transition-all h-full flex flex-row items-center justify-between p-4 text-2xl sticky top-0 z-20 ${navbarColor} ${textColor}`}>
-                <div className={'w-1/3 justify-center flex flex-row gap-4'}>
-                    <h2 className={`cursor-pointer font-bold`} onClick={() => handleClick(workRef)}>Work</h2>
-                    <h2 className={`cursor-pointer font-bold`} onClick={() => handleClick(aboutRef)}>About</h2>
-                </div>
-                <div className={'w-1/3 flex flex-row justify-center font-bold'}>Joshua Oguh</div>
-                <div className={'w-1/3 h-full justify-center flex flex-row gap-4 font-bold'}>
-                    <div className={'h-8 w-8 relative'}>
-                        <a href={'mailto:joshuaoguh012@gmail.com'}>
-                            <Image src={atImg} alt={'at sign'} layout={'fill'} objectFit={'contain'}/>
-                        </a>
-                    </div>
-                    <div className={'h-8 w-8 relative cursor-pointer'}>
-                        <a href={'https://github.com/Dismixed'} target="_blank" rel="noopener noreferrer">
-                            <Image src={githubImg} alt={'github icon'} layout={'fill'} objectFit={'contain'}/>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            {true ? null : <section className="bg-[#e2e8ff] dark:bg-gray-900 px-12 h-screen">
-                <div className="py-8 px-4 text-center lg:py-16 lg:px-12 flex flex-col h-full justify-center items-center">
-                    <p className="mb-2 text-lg font-normal text-black dark:text-white lg:text-xl sm:px-16 xl:px-48">
-                        My name is Joshua Oguh. I provide:
-                    </p>
-                    <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-loose text-gray-900 md:text-5xl lg:text-6xl dark:text-white px-32 text-center">
-                        Innovative web solutions to grow your business.
-                    </h1>
-                    <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48
-                    dark:text-gray-400">Transforming your online presence into a powerful business tool -
-                        my mission is to create stunning, effective websites that drive growth and engagement.
-                    </p>
-                    <div
-                        className="flex flex-col mb-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
-                        <a href="#"
-                           className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-black dark:text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
-                            Contact me
-                            <svg className="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
-                                 xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                      d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                                      clip-rule="evenodd"></path>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </section>}
-            <section className={'fixed h-screen flex gap-16 flex-col w-full relative bg-hero bg-cover bg-[#0c41f0]/75 bg-blend-multiply flex flex-row items-center justify-center'}>
-                <h1 className={`z-10 text-6xl w-3/5 text-center font-bold animate__animated animate__fadeInUp`} style={{color: `rgba(255, 255, 255, ${opacity}`}}>Hi! I&apos;m Joshua Oguh. <br /> I provide innovative web solutions to grow your business.</h1>
-                <h2 className={'text-white text-2xl z-10 animate__animated animate__fadeInUp'} onClick={handleClick} style={{color: `rgba(255, 255, 255, ${opacity}`}}>Scroll to see what I offer.</h2>
-            </section>
-            <section className="bg-white dark:bg-gray-900 px-12">
-                <div className="px-4 sm:px-6 lg:px-8 mt-16">
-                    <h2 className="text-6xl text-black dark:text-white font-semibold w-1/2">My goal is to build brands.</h2>
-                    <div className="grid grid-cols-4 mt-16 gap-8">
-                        <div className="col-span-1 border border-gray-800 rounded p-8">
-                            <h2 className="text-4xl text-black dark:text-white font-semibold">Design</h2>
-                            <p className="text-black dark:text-white mt-4 text-xl">I build websites that are fast, secure, and easy to manage.
-                                I use the latest technologies to ensure your website is future-proof and scalable.
-                            </p>
-                            <div className="rounded-full bg-blue-300 w-fit p-4 mt-8">
-                                <MdDesignServices className={'text-4xl'} />
-                            </div>
-                        </div>
-                        <div className="col-span-1 border border-gray-800 rounded p-8">
-                            <h2 className="text-4xl text-black dark:text-white font-semibold">Development</h2>
-                            <p className="text-black dark:text-white mt-4 text-xl">I build websites that are fast, secure, and easy to manage.
-                                I use the latest technologies to ensure your website is future-proof and scalable.
-                            </p>
-                            <div className="rounded-full bg-pink-300 w-fit p-4 mt-8">
-                                <MdOutlineCode className={'text-4xl'} />
-                            </div>
-                        </div>
-                        <div className="col-span-1 border border-gray-800 rounded p-8">
-                            <h2 className="text-4xl text-black dark:text-white font-semibold">Hosting</h2>
-                            <p className="text-black dark:text-white mt-4 text-xl">I build websites that are fast, secure, and easy to manage.
-                                I use the latest technologies to ensure your website is future-proof and scalable.
-                            </p>
-                            <div className="rounded-full bg-orange-300 w-fit p-4 mt-8">
-                                <MdRocketLaunch className={'text-4xl'} />
-                            </div>
-                        </div>
-                        <div className="col-span-1 border border-gray-800 rounded p-8">
-                            <h2 className="text-4xl text-black dark:text-white font-semibold">Analytics</h2>
-                            <p className="text-black dark:text-white mt-4 text-xl">I build websites that are fast, secure, and easy to manage.
-                                I use the latest technologies to ensure your website is future-proof and scalable.
-                            </p>
-                            <div className="rounded-full bg-green-300 w-fit p-4 mt-8">
-                                <MdAnalytics className={'text-4xl'} />
+        <div className="font-mont">
+            <Head>
+                <style>
+                    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+                </style>
+            </Head>
+            <Header />
+            <main>
+                <section className={'fixed h-screen flex gap-16 flex-col w-full relative bg-hero bg-cover bg-[#0c41f0]/75 bg-blend-multiply flex flex-row items-center justify-center'}>
+                    <h1 className={`z-10 xl:text-6xl text-5xl font-mont w-4/5 xl:w-3/5 text-center font-bold animate__animated animate__backInDown`} style={{color: `rgba(255, 255, 255, ${opacity}`}}>Hi! I&apos;m Joshua Oguh. <br /> I provide innovative web solutions to grow your business.</h1>
+                    <h2 className={'text-white font-mont text-2xl z-10 animate__animated animate__backInDown'} style={{color: `rgba(255, 255, 255, ${opacity}`}}>Scroll to see what I offer.</h2>
+                </section>
+                <section className="bg-white  px-12">
+                    <div className="pt-16 md:px-8">
+                        <AnimationOnScroll animateOnce className={"animate__animated"} animateIn={"animate__fadeInUp"}>
+                            <h2 className="xl:text-6xl text-5xl text-black font-semibold xl:w-1/2 w-full text-center xl:text-left">My goal is to build brands.</h2>
+                        </AnimationOnScroll>
+                        <div>
+                            <div className="xl:grid xl:grid-cols-4 flex flex-col mt-16 gap-8">
+                                <AnimationOnScroll animateOnce animateIn={"animate__fadeInUp"} className="animate__animated xl:col-span-1 row-span-1 border border-gray-800 rounded p-8">
+                                    <h2 className="text-4xl text-black font-semibold">Design</h2>
+                                    <p className="text-black mt-4 text-xl"> I prioritize UX
+                                        and create engaging interfaces that leave a lasting impression. The designs are
+                                        responsive and intuitive, ensuring your website looks and functions
+                                        flawlessly on any device.
+                                    </p>
+                                    <div className="rounded-full bg-blue-300 w-fit p-4 mt-8">
+                                        <MdDesignServices className={'text-4xl'} />
+                                    </div>
+                                </AnimationOnScroll>
+                                <AnimationOnScroll animateOnce animateIn="animate__fadeInUp" className="xl:animate__animated col-span-1 row-span-1 border border-gray-800 rounded p-8">
+                                    <h2 className="text-4xl text-black font-semibold">Develop</h2>
+                                    <p className="text-black mt-4 text-xl">I bring your vision to life by
+                                        leveraging the latest technologies and best practices, ensuring your
+                                        website is fast, secure, and scalable. The result is a performant website
+                                        that drives conversions.
+                                    </p>
+                                    <div className="rounded-full bg-pink-300 w-fit p-4 mt-8">
+                                        <MdOutlineCode className={'text-4xl'} />
+                                    </div>
+                                </AnimationOnScroll>
+                                <AnimationOnScroll animateOnce animateIn={"animate__fadeInUp"} className="animate__animated xl:col-span-1 row-span-1 border border-gray-800 rounded p-8">
+                                    <h2 className="text-4xl text-black font-semibold">Hosting</h2>
+                                    <p className="text-black mt-4 text-xl">I provide reliable and
+                                        secure hosting to keep your website online and performing at its
+                                        best, with a guarantee of fast loading times, proactive security measures, and regular
+                                        backups for peace of mind.
+                                    </p>
+                                    <div className="rounded-full bg-orange-300 w-fit p-4 mt-8">
+                                        <MdRocketLaunch className={'text-4xl'} />
+                                    </div>
+                                </AnimationOnScroll>
+                                <AnimationOnScroll animateOnce animateIn={"animate__fadeInUp"} className="animate__animated xl:col-span-1 row-span-1 border border-gray-800 rounded p-8">
+                                    <h2 className="text-4xl text-black font-semibold">Analytics</h2>
+                                    <p className="text-black mt-4 text-xl">I implement comprehensive
+                                        analytics solutions to track and analyze your website's performance.
+                                        I leverage data-driven insights to optimize your online presence
+                                        and drive growth.
+                                    </p>
+                                    <div className="rounded-full bg-green-300 w-fit p-4 mt-8">
+                                        <MdAnalytics className={'text-4xl'} />
+                                    </div>
+                                </AnimationOnScroll>
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
-            <section className="bg-white dark:bg-gray-900 px-12">
-                <div className="py-8 px-4 lg:py-16 lg:px-12 px-12">
-                    <h3 className="text-4xl font-bold text-black dark:text-white">The problem</h3>
-                    <p className="text-black dark:text-white mt-4 text-2xl w-2/3 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipiscing
-                        elit. Maecenas eros felis, pellentesque eget tincidunt quis, iaculis at elit.
-                    </p>
-                </div>
-                <div className="grid grid-cols-2 gap-8 px-4 lg:px-12 px-12">
-                    <div className="col-span-1 flex flex-col">
-                        <div className="flex flex-row items-center">
-                            <IoExtensionPuzzleSharp className={'text-lg text-orange-300'} />
-                            <p className="text-black dark:text-white text-lg ml-4">Your website has slow load times</p>
+                </section>
+                <section className="bg-white px-12">
+                    <div className="border-t-2 border-gray-300 mt-24" />
+                    <div className="pt-8 md:px-8">
+                        <AnimationOnScroll animateOnce className={"animate__animated"} animateIn={"animate__fadeInUp"}>
+                            <h3 className="md:text-6xl text-3xl md:py-4 font-bold text-black text-center md:text-left">The problem</h3>
+                        </AnimationOnScroll>
+                        <AnimationOnScroll animateOnce className={"animate__animated"} animateIn={"animate__fadeInUp"}>
+                            <p className="text-center md:text-left text-black mt-4 text-xl md:text-2xl xl:w-2/3">In web development,
+                                businesses face various challenges that hinder their online success. From outdated designs
+                                to slow load times, these obstacles impact user engagement and business growth.
+                                Identifying and overcoming these common pain points is essential for building a strong online presence.
+                            </p>
+                        </AnimationOnScroll>
+                    </div>
+                    <div className="xl:grid xl:grid-cols-2 xl:gap-8 flex flex-col md:px-8 pt-16">
+                        <div className="xl:col-span-1 flex flex-col gap-4 md:gap-0 mb-4 md:mb-0">
+                            <AnimationOnScroll animateOnce animateIn={"animate__fadeInUp"} className="animate__animated flex flex-row items-center">
+                                <IoExtensionPuzzleSharp className={'text-xl text-orange-300'} />
+                                <p className="text-black text-lg md:text-xl ml-4">Your website has slow load times</p>
+                            </AnimationOnScroll>
+                            <AnimationOnScroll animateOnce animateIn={"animate__fadeInUp"} className="animate__animated flex flex-row items-center xl:mt-8">
+                                <IoExtensionPuzzleSharp className={'text-xl text-yellow-300'} />
+                                <p className="text-black text-lg md:text-xl ml-4">Your website's design is outdated</p>
+                            </AnimationOnScroll>
+                            <AnimationOnScroll animateOnce animateIn={"animate__fadeInUp"} className="animate__animated flex flex-row items-center xl:mt-8">
+                                <IoExtensionPuzzleSharp className={'text-xl text-blue-300'} />
+                                <p className="text-black text-lg md:text-xl ml-4">Your website has poor mobile optimization </p>
+                            </AnimationOnScroll>
                         </div>
-                        <div className="flex flex-row items-center mt-8">
-                            <IoExtensionPuzzleSharp className={'text-lg text-yellow-300'} />
-                            <p className="text-black dark:text-white text-lg ml-4">Your website's design is outdated</p>
-                        </div>
-                        <div className="flex flex-row items-center mt-8">
-                            <IoExtensionPuzzleSharp className={'text-lg text-blue-300'} />
-                            <p className="text-black dark:text-white text-lg ml-4">Your website has poor mobile optimization </p>
+                        <div className="xl:col-span-1 flex flex-col gap-4 md:gap-0">
+                            <AnimationOnScroll animateOnce animateIn={"animate__fadeInUp"} className="animate__animated flex flex-row items-center">
+                                <IoExtensionPuzzleSharp className={'text-xl text-green-300'} />
+                                <p className="text-black text-lg md:text-xl ml-4">Your website lacks mobile-first design</p>
+                            </AnimationOnScroll>
+                            <AnimationOnScroll animateOnce animateIn={"animate__fadeInUp"} className="animate__animated flex flex-row items-center xl:mt-8">
+                                <IoExtensionPuzzleSharp className={'text-xl text-pink-300'} />
+                                <p className="text-black text-lg md:text-xl ml-4">Lack of search engine optimization</p>
+                            </AnimationOnScroll>
                         </div>
                     </div>
-                    <div className="col-span-1 flex flex-col">
-                        <div className="flex flex-row items-center">
-                            <IoExtensionPuzzleSharp className={'text-lg text-green-300'} />
-                            <p className="text-black dark:text-white text-lg ml-4">Bad mobile design</p>
-                        </div>
-                        <div className="flex flex-row items-center mt-8">
-                            <IoExtensionPuzzleSharp className={'text-lg text-pink-300'} />
-                            <p className="text-black dark:text-white text-lg ml-4">Lack of search engine optimization</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section className="bg-white dark:bg-gray-900 px-12">
-                <div className="py-8 px-4 lg:py-16 lg:px-12 px-12 grid grid-cols-7">
-                    <div className="col-span-4">
-                        <div className="flex flex-col">
-                            <div className="bg-gradient-to-b from-blue-600 to-indigo-800 rounded-lg h-36 w-3/4 mt-8 p-8">
+                </section>
+                <section className="bg-white px-12 mt-12">
+                    <div className="py-8 xl:py-16 md:px-8 md:grid md:grid-cols-7 flex flex-col-reverse">
+                        <div className="md:col-span-4 md:mt-0 mt-8">
+                            <AnimationOnScroll animateOnce animateIn={"animate__fadeInUp"} className="animate__animated bg-gradient-to-b from-blue-600 to-indigo-800 rounded-xl mt-4 md:w-3/4 w-full p-8">
                                 <div className="flex flex-row items-center">
                                     <MdLightbulb className={'text-3xl text-white'} />
-                                    <h4 className="text-white ml-4 text-3xl">Content strategy analysis</h4>
+                                    <h4 className="text-white ml-4 text-3xl font-medium">Content analysis</h4>
                                 </div>
-                            </div>
-                            <div className="bg-gradient-to-b from-indigo-800 to-violet-700 rounded-lg h-36 w-3/4 ml-24 mt-12 p-8">
+                                <p className="text-gray-200 mt-4">
+                                    Maximize the impact of your content with a data-driven analysis that helps you target the right audience, drive organic traffic, and create brand trust.</p>
+                            </AnimationOnScroll>
+                            <AnimationOnScroll animateOnce animateIn={"animate__fadeInUp"} className="animate__animated bg-gradient-to-b from-indigo-800 to-violet-700 rounded-xl md:w-3/4 md:ml-24 w-full mt-12 p-8">
                                 <div className="flex flex-row items-center">
                                     <HiPaintBrush className={'text-3xl text-white'} />
-                                    <h4 className="text-white ml-4 text-3xl">Website redesign</h4>
+                                    <h4 className="text-white ml-4 text-3xl font-medium">Website redesign</h4>
                                 </div>
-                            </div>
-                            <div className="bg-gradient-to-b from-violet-700 to-purple-900 rounded-lg h-36 w-3/4 mt-12 p-8">
+                                <p className="text-gray-200 mt-4">
+                                    Elevate your online presence and attract more customers with a stunning website redesign that drives conversions and sets you apart from competitors
+                                </p>
+                            </AnimationOnScroll>
+                            <AnimationOnScroll animateOnce animateIn={"animate__fadeInUp"} className="animate__animated bg-gradient-to-b from-violet-700 to-purple-900 rounded-xl w-full md:w-3/4 mt-12 p-8">
                                 <div className="flex flex-row items-center">
                                     <BsFillGearFill className={'text-3xl text-white'} />
-                                    <h4 className="text-white ml-4 text-3xl">Performance Optimization</h4>
+                                    <h4 className="text-white ml-4 text-3xl font-medium">Performance Optimization</h4>
+                                </div>
+                                <p className="text-gray-200 mt-4">
+                                    Elevate your online presence and attract more customers with a stunning website redesign that drives conversions and sets you apart from competitors.
+                                </p>
+                            </AnimationOnScroll>
+                        </div>
+                        <div className="md:col-span-3 md:px-8">
+                            <AnimationOnScroll animateOnce animateIn={"animate__fadeInUp"} className="animate__animated w-full md:w-fit">
+                                <h3 className="md:text-6xl text-3xl font-bold text-black text-center md:text-left">The solution</h3>
+                                <p className="text-black mt-8 text-2xl text-center md:text-left">Save time as a
+                                    busy business owner with simplified web development solutions tailored to your needs.
+                                    From captivating website designs to efficient development practices,
+                                    I handle the technical aspects, allowing you to focus on your business.
+                                </p>
+                            </AnimationOnScroll>
+                        </div>
+                    </div>
+                </section>
+                <section className="bg-white px-12">
+                    <div className="border-t-2 border-gray-300 mt-12" />
+                    <div className="py-8 md:px-8">
+                        <AnimationOnScroll animateOnce animateIn={"animate__fadeInUp"} className="animate__animated">
+                            <h3 className="md:text-6xl text-5xl md:py-4 text-black font-semibold">My recent works</h3>
+                        </AnimationOnScroll>
+                    </div>
+                    <div className="flex flex-col justify-center md:px-8">
+                        <AnimationOnScroll animateOnce animateIn={"animate__fadeInUp"} className="animate__animated grid md:grid-cols-11 md:grid-rows-1 grid-rows-11 border border-gray-300
+                                                   h-[32rem] cursor-pointer group transition-all hover:scale-95">
+                            <div className="md:col-span-5 row-span-8 px-8 flex flex-col justify-center order-last md:order-none">
+                                <h4 className="md:text-5xl text-4xl text-bold group-hover:text-blue-600 transition-all">OrbitXLM</h4>
+                                <p className="text-gray-500 mt-4 md:text-xl">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    Maecenas eros felis, pellentesque eget tincidunt quis, iaculis at elit.</p>
+                                <div className="flex flex-row mt-8">
+                                    <div className="flex flex-row items-center">
+                                        <span className="text-2xl font-medium underline">View project</span>
+                                        <IoArrowForwardSharp className={'text-2xl ml-2 group-hover:ml-8 transition-all'} />
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                            <div className="md:col-span-6 row-span-3 bg-blue-200 flex flex-row justify-center items-center">
+                                <div className="w-5/6 h-3/4 relative group-hover:scale-110 transition-all">
+                                    <Image src={"/orbitxlm.png"} fill={true} layout={'fill'} objectFit={'contain'}/>
+                                </div>
+                            </div>
+                        </AnimationOnScroll>
                     </div>
-                    <div className="col-span-3">
-                        <h3 className="text-4xl font-bold text-black dark:text-white">The solution</h3>
-                        <p className="text-black dark:text-white mt-4 text-2xl dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit. Maecenas eros felis, pellentesque eget tincidunt quis, iaculis at elit.
-                        </p>
+                    <div className="flex flex-col justify-center mt-16 md:px-8">
+                        <AnimationOnScroll animateOnce animateIn={"animate__fadeInUp"} className="animate__animated grid md:grid-cols-11 md:grid-rows-1 grid-rows-11 border border-gray-300
+                                                   h-[32rem] cursor-pointer group transition-all hover:scale-95">
+                            <div className="md:col-span-5 row-span-8 px-8 flex flex-col justify-center order-last md:order-none">
+                                <h4 className="md:text-5xl text-4xl text-bold group-hover:text-blue-600 transition-all">Tidy Thoughts</h4>
+                                <p className="text-gray-500 md:text-xl mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    Maecenas eros felis, pellentesque eget tincidunt quis, iaculis at elit.</p>
+                                <div className="flex flex-row mt-8">
+                                    <div className="flex flex-row items-center">
+                                        <span className="text-2xl font-medium underline">View project</span>
+                                        <IoArrowForwardSharp className={'text-2xl ml-2 group-hover:ml-8 transition-all'} />
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="md:col-span-6 row-span-3 bg-green-200 flex flex-row justify-center items-center">
+                                <div className="w-5/6 h-3/4 relative group-hover:scale-110 transition-all">
+                                    <Image src={"/tidythoughts2.png"} fill={true} layout={'fill'} objectFit={'contain'}/>
+                                </div>
+                            </div>
+                        </AnimationOnScroll>
                     </div>
-                </div>
-            </section>
-            <section className="bg-white dark:bg-gray-900 px-12">
-                <div className="py-8 px-4 lg:py-16 lg:px-12 px-12 text-center">
-                    <h3 className="text-6xl text-black dark:text-white font-semibold">My recent works</h3>
-                </div>
-                <div className="grid grid-cols-5 gap-8 px-4 lg:px-12 px-12">
-                    <div className="col-span-2">
-                        <div className="flex flex-col">
-                            <h4 className="text-black dark:text-white text-3xl font-medium tracking-loose">OrbitXLM</h4>
-                            <p className="text-black dark:text-white text-xl mt-8">Lorem ipsum dolor sit amet, consectetur adipiscing
-                                elit. Nulla ipsum ipsum, fringilla id pharetra a, semper eu nibh. Sed ornare erat
-                                convallis, euismod est vel, laoreet sem. Cras placerat lacus rutrum egestas bibendum.
-                                Suspendisse potenti. Vestibulum sit amet placerat velit. Maecenas non consectetur purus.
-                                Aliquam sed massa ullamcorper urna faucibus auctor id venenatis mauris.
+                </section>
+                <section className="bg-white  px-12">
+                    <div className="border-t-2 border-gray-300 mt-24" />
+                    <div className="py-8 px-4 text-center md:px-8">
+                        <AnimationOnScroll animateOnce animateIn={"animate__fadeInUp"} className="animate__animated">
+                            <h3 className="text-6xl text-black font-semibold py-4">My Process</h3>
+                            <p className="text-black mt-4 text-xl md:px-64">With a
+                                streamlined approach, I efficiently plan and execute web development projects.
+                                By closely collaborating with you, I transform your vision into seamless web experiences.
+                                Utilizing modern technologies and best practices, my process ensures efficient and
+                                successful web development from start to finish.
                             </p>
+                        </AnimationOnScroll>
+                        <div className="flex flex-col md:flex-row justify-center static mt-12 gap-16 md:gap-2">
+                            <AnimationOnScroll animateOnce animateIn={"animate__fadeInUp"} className="animate__animated
+                            flex flex-col items-center">
+                                <div className="bg-sky-200 rounded-full w-48 h-48 flex flex-col justify-center items-center">
+                                    <FaCompass className="text-6xl text-sky-500" />
+                                </div>
+                                <div className="px-8">
+                                    <h4 className="text-3xl font-bold mt-4">Strategize</h4>
+                                    <p className="text-gray-500 mt-4"> I conduct in-depth research and analysis to create
+                                        a tailored plan that aligns with your goals and target audience, ensuring a
+                                        solid foundation for your web development project.</p>
+                                </div>
+                            </AnimationOnScroll>
+                            <AnimationOnScroll animateOnce animateIn={"animate__fadeInUp"} className="animate__animated
+                            flex flex-col items-center">
+                                <div className="bg-blue-200 rounded-full w-48 h-48 flex flex-col justify-center items-center">
+                                    <SiMaterialdesignicons className="text-6xl text-blue-500" />
+                                </div>
+                                <div className="px-8">
+                                    <h4 className="text-3xl font-bold mt-4">Design</h4>
+                                    <p className="text-gray-500 mt-4">I combine creativity and user-centric principles
+                                        to craft captivating and intuitive interfaces that enhance the user experience,
+                                        delivering visually appealing designs that leave a lasting impression.</p>
+                                </div>
+                            </AnimationOnScroll>
+                            <AnimationOnScroll animateOnce animateIn={"animate__fadeInUp"} className="animate__animated
+                            flex flex-col items-center">
+                                <div className="bg-indigo-200 rounded-full w-48 h-48 flex flex-col justify-center items-center">
+                                    <FaLaptopCode className="text-6xl text-indigo-500" />
+                                </div>
+                                <div className="px-8">
+                                    <h4 className="text-3xl font-bold mt-4">Develop</h4>
+                                    <p className="text-gray-500 mt-4">Utilizing the latest technologies, I meticulously
+                                        code and develop your website, ensuring seamless functionality and optimal
+                                        performance for an exceptional user experience</p>
+                                </div>
+                            </AnimationOnScroll>
+                            <AnimationOnScroll animateOnce animateIn={"animate__fadeInUp"} className="animate__animated
+                            flex flex-col items-center">
+                                <div className="bg-violet-200 rounded-full w-48 h-48 flex flex-col justify-center items-center">
+                                    <MdRocketLaunch className="text-6xl text-violet-500" />
+                                </div>
+                                <div className="px-8">
+                                    <h4 className="text-3xl font-bold mt-4">Launch</h4>
+                                    <p className="text-gray-500 mt-4">After rigorous testing and optimization, I ensure
+                                        a smooth website launch, assisting with domain setup and hosting configurations,
+                                        so your website is ready to make an impactful online debut.</p>
+                                </div>
+                            </AnimationOnScroll>
+                            <AnimationOnScroll animateOnce animateIn={"animate__fadeInUp"} className="animate__animated
+                            flex flex-col items-center">
+                                <div className="bg-purple-200 rounded-full w-48 h-48 flex flex-col justify-center items-center">
+                                    <BsFillClipboardCheckFill className="text-6xl text-purple-500" />
+                                </div>
+                                <div className="px-8">
+                                    <h4 className="text-3xl font-bold mt-4">Maintain</h4>
+                                    <p className="text-gray-500 mt-4">I provide ongoing support, updates, analytics,
+                                        and maintenance to keep your website secure, up-to-date,
+                                        and aligned with your evolving needs, ensuring its long-term success and performance</p>
+                                </div>
+                            </AnimationOnScroll>
                         </div>
                     </div>
-                    <div className="col-span-3 bg-gray-500 rounded-xl">
-
-                    </div>
-                </div>
-                <div className="grid grid-cols-5 gap-8 px-4 lg:px-12 px-12 mt-24">
-                    <div className="col-span-3 bg-gray-500 rounded-xl">
-
-                    </div>
-                    <div className="col-span-2">
-                        <div className="flex flex-col">
-                            <h4 className="text-black dark:text-white text-3xl font-medium tracking-loose">OrbitXLM</h4>
-                            <p className="text-black dark:text-white text-xl mt-8">Lorem ipsum dolor sit amet, consectetur adipiscing
-                                elit. Nulla ipsum ipsum, fringilla id pharetra a, semper eu nibh. Sed ornare erat
-                                convallis, euismod est vel, laoreet sem. Cras placerat lacus rutrum egestas bibendum.
-                                Suspendisse potenti. Vestibulum sit amet placerat velit. Maecenas non consectetur purus.
-                                Aliquam sed massa ullamcorper urna faucibus auctor id venenatis mauris.
-                            </p>
+                </section>
+                <section className="bg-white px-12 mb-24 mt-8">
+                    <div className="border-t-2 border-gray-300 mt-18" />
+                    <div className="grid md:grid-cols-3 grid-rows-3 md:grid-rows-1 mt-16 px-8">
+                        <AnimationOnScroll animateOnce animateIn={"animate__fadeInUp"} className="animate__animated row-span-2 md:col-span-2">
+                            <h3 className="text-6xl font-semibold">Interested in working together?</h3>
+                            <p className="text-xl mt-8">I'd love to hear from you and learn more about your business. <br/> Send me a message to discuss how I can help you achieve your web development goals and take your online presence to the next level.</p>
+                        </AnimationOnScroll>
+                        <div className="row-span-1 md:col-span-1 flex flex-row justify-center items-center">
+                            <AnimationOnScroll animateOnce animateIn={"animate__fadeInUp"} className={"animate__animated"}>
+                                <a className="flex flex-col h-32 w-32 items-center justify-center
+                        border-2 border-black rounded-full transition-all hover:bg-black group cursor-pointer"
+                                   href={"/contact"}>
+                                    <MdArrowForwardIos className="text-6xl text-black font-light group-hover:text-white" />
+                                </a>
+                            </AnimationOnScroll>
                         </div>
                     </div>
-                </div>
-            </section>
-            <section className="bg-white dark:bg-gray-900 px-12">
-                <div className="py-8 px-4 lg:py-16 lg:px-12 px-12 text-center">
-                    <h3 className="text-6xl text-black dark:text-white font-semibold">My Process</h3>
-                    <p className="text-black dark:text-white mt-4 text-lg px-64 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipiscing
-                        elit. Maecenas eros felis, pellentesque eget tincidunt quis, iaculis at elit.
-                    </p>
-                    <div className="border-2 border-black dark:border-white mt-16">
-                        <div className="flex flex-row p-12 items-center gap-12 grid grid-cols-5">
-                            <div className="flex flex-col items-center justify-center col-span-1">
-                                <h4 className="text-black dark:text-white font-semibold text-5xl">01</h4>
-                                <h4 className="text-black dark:text-white font-medium text-5xl">Strategize</h4>
-                            </div>
-                            <p className="text-black dark:text-white text-xl text-start col-span-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam feugiat pellentesque
-                                ornare. Aenean ornare odio eu arcu hendrerit convallis.
-                                Suspendisse dignissim volutpat nisl, eu vulputate massa eleifend in.
-                                Nunc ut magna et neque mattis fringilla eu non nisl. </p>
-                        </div>
-                        <div className="border border-black dark:border-white w-11/12 mx-auto"></div>
-                        <div className="flex flex-row p-12 items-center gap-12 grid grid-cols-5">
-                            <div className="flex flex-col items-center justify-center col-span-1">
-                                <h4 className="text-black dark:text-white font-semibold text-5xl">02</h4>
-                                <h4 className="text-black dark:text-white font-medium text-5xl">Design</h4>
-                            </div>
-                            <p className="text-black dark:text-white text-xl text-start col-span-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam feugiat pellentesque
-                                ornare. Aenean ornare odio eu arcu hendrerit convallis.
-                                Suspendisse dignissim volutpat nisl, eu vulputate massa eleifend in.
-                                Nunc ut magna et neque mattis fringilla eu non nisl. </p>
-                        </div>
-                        <div className="border border-black dark:border-white w-11/12 mx-auto"></div>
-                        <div className="flex flex-row p-12 items-center gap-12 grid grid-cols-5">
-                            <div className="flex flex-col items-center justify-center col-span-1">
-                                <h4 className="text-black dark:text-white font-semibold text-5xl">03</h4>
-                                <h4 className="text-black dark:text-white font-medium text-5xl">Develop</h4>
-                            </div>
-                            <p className="text-black dark:text-white text-xl text-start col-span-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam feugiat pellentesque
-                                ornare. Aenean ornare odio eu arcu hendrerit convallis.
-                                Suspendisse dignissim volutpat nisl, eu vulputate massa eleifend in.
-                                Nunc ut magna et neque mattis fringilla eu non nisl. </p>
-                        </div>
-                        <div className="border border-black dark:border-white w-11/12 mx-auto"></div>
-                        <div className="flex flex-row p-12 items-center gap-12 grid grid-cols-5">
-                            <div className="flex flex-col items-center justify-center col-span-1">
-                                <h4 className="text-black dark:text-white font-semibold text-5xl">04</h4>
-                                <h4 className="text-black dark:text-white font-medium text-5xl">Launch</h4>
-                            </div>
-                            <p className="text-black dark:text-white text-xl text-start col-span-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam feugiat pellentesque
-                                ornare. Aenean ornare odio eu arcu hendrerit convallis.
-                                Suspendisse dignissim volutpat nisl, eu vulputate massa eleifend in.
-                                Nunc ut magna et neque mattis fringilla eu non nisl. </p>
-                        </div>
-                        <div className="border border-black dark:border-white w-11/12 mx-auto"></div>
-                        <div className="flex flex-row p-12 items-center gap-12 grid grid-cols-5">
-                            <div className="flex flex-col items-center justify-center col-span-1">
-                                <h4 className="text-black dark:text-white font-semibold text-5xl">05</h4>
-                                <h4 className="text-black dark:text-white font-medium text-5xl">Maintain</h4>
-                            </div>
-                            <p className="text-black dark:text-white text-xl text-start col-span-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam feugiat pellentesque
-                                ornare. Aenean ornare odio eu arcu hendrerit convallis.
-                                Suspendisse dignissim volutpat nisl, eu vulputate massa eleifend in.
-                                Nunc ut magna et neque mattis fringilla eu non nisl. </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section className="bg-white dark:bg-gray-900 px-12">
-                <div className="py-8 px-4 lg:py-16 lg:px-12 px-12 text-center">
-                    <h3 className="text-5xl text-black dark:text-white font-semibold">Have a project in mind? Let's chat.</h3>
-                    <form action="#" className="space-y-8 px-48 mt-12">
-                        <div>
-                            <label htmlFor="email"
-                                   className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your
-                                email</label>
-                            <input type="email" id="email"
-                                   className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
-                                   placeholder="name@flowbite.com" required />
-                        </div>
-                        <div>
-                            <label htmlFor="subject"
-                                   className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Subject</label>
-                            <input type="text" id="subject"
-                                   className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
-                                   placeholder="Let us know how we can help you" required />
-                        </div>
-                        <div className="sm:col-span-2">
-                            <label htmlFor="message"
-                                   className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your
-                                message</label>
-                            <textarea id="message" rows={6}
-                                      className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                                      placeholder="Write a message..."></textarea>
-                        </div>
-                        <button type="submit"
-                                className="py-3 px-5 text-sm font-medium text-center text-black dark:text-white rounded-lg bg-blue-500 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-blue-500 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Send
-                            message
-                        </button>
-                    </form>
-                </div>
-            </section>
+                </section>
+            </main>
+            <Footer />
         </div>
 
 
